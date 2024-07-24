@@ -22,6 +22,7 @@ import Footer from './Footer';
 import FontSelector from './cvFunctionality/FontSelector';
 import ColorButtons from './cvFunctionality/ColorButtons';
 import TemplateComponent from './forms/templateComponent';
+import Modal from './cvFunctionality/Modal'
 
 const predefinedColors = {
   Template1: '#F5F5F5',
@@ -105,6 +106,8 @@ function Form() {
   const [resumeData, setResumeData] = useState(null);
   const [id, setid] = useState(null);
   const [idFromResponse, setIdFromResponse] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const [screenNames, setScreenNames] = useState({
     Details: 'Details',
@@ -115,6 +118,10 @@ function Form() {
     SectionAdd: 'Finalize',
     
   });
+
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const screenComponents = {
     Details: <Experiencescreen />,
@@ -387,7 +394,6 @@ return (<div>
    {resumeData?(<><div className="h-screen">
     {!isPreviewing ? (
       <>
-      {console.log(id,'testfo rid')}
       <div className=' flex flex-col'>
       <div className="flex flex-col md:flex-row justify-between border-2 p-1 bg-slate-300">
   <button
@@ -419,7 +425,7 @@ return (<div>
   </button>
 </div>
 
-<div className=" bg-[#333456] hidden md:block">
+<div className=" bg-[#333456] hidden md:block ">
             <Slider
               sectionsList={sectionsList}
               currentStep={currentStep}
@@ -748,9 +754,29 @@ start_date={resumeData.employmenthistory[0]?.start_date}
               
               
               />
-              <div className='my-2 px-10 '>
-       <TemplateSelector selectedTemplate={selectedTemplate} setSelectedTemplate={setSelectedTemplate} />
-       </div>
+       {/* <TemplateSelector selectedTemplate={selectedTemplate} setSelectedTemplate={setSelectedTemplate} /> */}
+       <div className='px-10 py-5 flex justify-center items-center'>
+          <button 
+            onClick={openModal}
+            className="bg-black text-white px-4 py-2 rounded-full font-bold"
+          >
+            Select Template
+          </button>
+        </div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <TemplateSelector
+          selectedTemplate={selectedTemplate}
+          setSelectedTemplate={(template) => {
+            setSelectedTemplate(template);
+            closeModal();
+          }}
+        />
+      </Modal>
+
+    
+
+      
             </div>
           </div>
         </div>

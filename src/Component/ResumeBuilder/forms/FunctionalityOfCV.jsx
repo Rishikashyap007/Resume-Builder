@@ -480,7 +480,7 @@ const FunctionalityOfCV = ({
         </Modal>
       </div>
 
-      <div className="mt-4 text-center">
+      {/* <div className="mt-4 text-center">
         <button
           className="text-black border-blue-950 border-2 rounded font-bold p-2 w-full flex items-center justify-center"
           onClick={toggleManageSectionsModal}
@@ -488,36 +488,10 @@ const FunctionalityOfCV = ({
           Manage Sections
         </button>
         <Modal isOpen={manageSectionsModalOpen} onClose={toggleManageSectionsModal}>
-          {/* <div className="p-4">
-            <h2 className="text-xl font-bold mb-4">Reorder Sections</h2>
-            <DragDropContext onDragEnd={onDragEnd}>
-              <Droppable droppableId="sections">
-                {(provided) => (
-                  <div {...provided.droppableProps} ref={provided.innerRef}>
-                    {sectionKeys.map((section, index) => (
-                      <Draggable key={section.key} draggableId={section.key} index={index}>
-                        {(provided) => (
-                          <div
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                            className="p-2 mb-2 bg-white border rounded shadow"
-                          >
-                            {section.label}
-                          </div>
-                        )}
-                      </Draggable>
-                    ))}
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            </DragDropContext>
-          </div> */}
+          
           <FloatingReorderSections data={data} />
-          {/* <PreviewSection sections={sections} data={data} /> */}
-        </Modal>
-      </div>
+        </Modal> */}
+      {/* </div> */}
     </div>
   );
 };

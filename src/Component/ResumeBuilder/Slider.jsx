@@ -40,10 +40,10 @@ const Slider = ({
   };
 
   return (
-    <div className=" w-[203vh] h-16  justify-center px-4" style={{ backgroundColor: '#333456', color: '#F2931C' }}>
-      <div className=' flex'>
+    <div className=" w-[203vh] h-16 mx-auto px-4 " style={{ backgroundColor: '#333456', color: '#F2931C' }}>
+      <div className=' flex justify-center items-center '>
       <Link to='/dashboard'>
-      <div className=" mt-4">
+      <div className="">
         <img src={logo} className="w-32 " alt="Logo" />
       </div>
       </Link>
