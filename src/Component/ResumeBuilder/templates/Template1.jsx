@@ -590,7 +590,7 @@ const Template1 = ({
       return hasContent ? (
         <div key={index}>
           <h5 className="text-black font-bold border-b-2 border-gray-400 pb-1 mb-4">
-            {sect?.sectionname || predefinedText?.sectionadd?.sectionname || "Default Section Name"}
+            {sect?.sectiontitle || predefinedText?.sectionadd?.sectiontitle || "Default Section Name"}
           </h5>
           <p
             className={`${paragraphSpacingClass} text-sm text-gray-700 break-all`}
