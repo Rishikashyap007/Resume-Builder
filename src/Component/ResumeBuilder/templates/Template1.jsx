@@ -1257,16 +1257,16 @@ const Template1 = ({
                     </div>
                     <div className="flex justify-between mb-1">
                       <h6 className="text-sm text-gray-700">
-                        {edu?.degree || predefinedText.educations?.degree || "Degree not provided"}
+                        {edu?.coursename || predefinedText.educations?.coursename || "Degree not provided"}
                       </h6>
                       <p className="text-sm text-gray-600">
-                        {edu?.educationplace || predefinedText.educations?.educationplace || "Education place not provided"}
+                        {edu?.schoolplace || predefinedText.educations?.schoolplace || "Education place not provided"}
                       </p>
                     </div>
-                    <div 
+                    {/* <div 
                       className="text-sm prose prose-sm max-w-none"
                       dangerouslySetInnerHTML={createMarkup(edu.description)}
-                    />
+                    /> */}
                   </div>
                 ))
               ) : (
