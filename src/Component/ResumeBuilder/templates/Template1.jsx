@@ -1302,7 +1302,7 @@ const Template1 = ({
                 section.content.map((sec, secIndex) => (
                   <div key={`sectionadd-${secIndex}`} className="mb-4">
                     <h5 className="font-bold text-lg text-gray-800">
-                      {sec?.title || predefinedText.sectionadd?.title || "Title not provided"}
+                      {sec?.sectiontitle || predefinedText.sectionadd?.sectiontitle || "Title not provided"}
                     </h5>
                     <div
                       className="text-sm prose prose-sm max-w-none"
