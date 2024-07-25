@@ -1306,7 +1306,7 @@ const Template1 = ({
                     </h5>
                     <div
                       className="text-sm prose prose-sm max-w-none"
-                      dangerouslySetInnerHTML={createMarkup(sec?.description || predefinedText.sectionadd?.description || "No description provided")}
+                      dangerouslySetInnerHTML={createMarkup(sec?.sectiondescription || predefinedText.sectionadd?.sectiondescription || "No description provided")}
                     />
                   </div>
                 ))
